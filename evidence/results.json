@@ -1,0 +1,347 @@
+{
+  "E01_environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "cryptography": "50.0.2",
+    "utc": "2026-10-21T13:35:07.489523+00:00",
+    "student_id": "202245540",
+    "placeholder": false,
+    "random_file_sha256": "d62556d95f6d47b0a451bd1d7b4d90a26275de8f4d4a6a72e2d78ae6b14a4510",
+    "random_file_bytes": 1031
+  },
+  "E02_modes": [
+    {
+      "input": "text",
+      "mode": "CBC",
+      "plaintext_bytes": 49,
+      "ciphertext_bytes": 64,
+      "iv_bytes": 16,
+      "padding_bytes": 15,
+      "iv_hex": "233f152af9c45047ea9a7ab99fb7fbed",
+      "ciphertext_hex": "ba1b728c8828717c05535b1eba0358e6774f08bba36e23580eb87f680178addb9a0d23d829188f6e57d5833f051385992cfe7d7f9a48460f043fa7042215f13c",
+      "tag_hex": "4219a75b38565620bdb3191759dde6f9b6822fe8226e7844c19e16c69ac2087a",
+      "repeat_iv_equal": false,
+      "repeat_ciphertext_equal": false,
+      "repeat_envelope_equal": false
+    },
+    {
+      "input": "text",
+      "mode": "CTR",
+      "plaintext_bytes": 49,
+      "ciphertext_bytes": 49,
+      "iv_bytes": 16,
+      "padding_bytes": 0,
+      "iv_hex": "e7dd2a2295dea2ff2440295b20b764a1",
+      "ciphertext_hex": "0770e690a6f0f9b1e6f0a47cafac7633d66a1b10e3582667c1553d33e59cf5c67e76c2eea8b4295dfe7f390f262441245d",
+      "tag_hex": "8b25797a4486f5e511474583010485d19c8c34f8281f87da37a521d22b9eea96",
+      "repeat_iv_equal": false,
+      "repeat_ciphertext_equal": false,
+      "repeat_envelope_equal": false
+    },
+    {
+      "input": "binary",
+      "mode": "CBC",
+      "plaintext_bytes": 1031,
+      "ciphertext_bytes": 1040,
+      "iv_bytes": 16,
+      "padding_bytes": 9,
+      "iv_hex": "9f139a2b083de0a22d77d0ae9f36a6d2",
+      "ciphertext_hex": "a2d42b3507383bebf9eb4e69f066839b7a8cf494c5e629efc263c2af3ac990b9f2e29b89a19897af27ae3c70ef6ac6bd94b9afb088631deaed8b90aaa9e9d055c6326d6a2b8cac8fe3ecaf112d07412e4859d29908932c9f573c14e9e6dabba782ebfa3b04e96fbfb8d4c3aae0c384896d9c410d946944fb5e67d1ef9f71e675ce66b5ac805fb0ff4bee5adc93612f012ad2fe0c1c6deb11c0ae850a7ede96d00687475419cfdbdee754cf92ee3e2282efd5a564b4a0e11f33982bfc4cdb950f92fed929480d3d0a6f20996b2c2cb1b7700ef570b76237653ba634c22652b8adddddc99871fa92379e368e52034e6ef22e11d76329b59a4333d9786c73d1880f5858e81b660aaaa7da17e0a3c66314ea01bd05773ec0fe73b80fc992aacf2a2093dc49d9bbcf383f2c48933f4f22e1e54e159b7e8803eda6714a63dc23dd4b767e7694be5ec0d665bccf5684ece2806c5b04b79da51a25de4ed4a86aebe33c68f9f05ca3ac57d94578bc85890d8253acef4351c3611ec18ceacdc0538dcb89b9b39cf1f2abc52dbd60d2dc79b486f136bce861da71d8b01b3992ed5e0c21ab39129771665617a017fd47ccfee6eb2ffa568d08071d5886428e4f5dd4f76fc477d60c344ba49314d300e63d2542442fd8f7598fd674de17ea12e165a027c9110b13b8fd8b1365b0f29e30106e00818a73f87ba25fa97eeac866d031a7cebfc3d394e961297e7f811b2fdf5f36c526b0a58dac55098e3762f09fa47ebf43b791d8fee4455b03469fa6b6df26f408d780b0ad40c4632d610b23a4855c7e489040a16e818f2db65c5e3cea6b4c150dfc721bf8eac3b23f7ad8c7bf6b9541cfdf6f07d26baf9d0f29ffd90e18795d79013898073dc9b9ebf57e4cea44d16f1f75b7263726b503047e8466ed47194390034cf4f163a4c3a2fd26ce806b92bdcf6218b21d5f918501a4407549ca96b0a6998544a1dd83a2207c63c382390ea5c9ef18c7c0c74ce7cacec91be3314f19a2c436e202142e7dfc7abbb8180d56b031e62de2ee069b36dd0de847c8cdf1f5fce88c37fdf352870804a07de7be8c55f3d06f99616f0a92fabc36a356800a9019345c79d0db8c05a239efcf1d9742bcf3d1106a0f9fb0bc7916df872446db081133b87c44a46d8b22d3c55e98f6f448196d578429fe37dc0230a3b44527579d474bd56eb013de8510ac224997eb4bdab7c50d7944cddbcf3ed6231142c3e0e1698d3a306db6230f576834bb814f77abef8d9b1f0bcdbd396ae4415a7044f4598ad922265c12fe4bbc239a5b01f10809ce702cec21fbcb79b54787605992ed7313bc3654a93bc8e075e113f1b92e3caf78a67d284097da1ec6f689446af6f2e2dabab8aa14bd8654a036aaaab164150ff27385eab217b9d0bc0353184c1034ac18a2c9429e8436fd80bcfc65115b6a9a3ac9a6250d729db99601227f4ea47c24b6a0ae52",
+      "tag_hex": "6efa10376b3aa8532c215832e1380d7c8708ca18625d654d9aaedec3cd272a5a",
+      "repeat_iv_equal": false,
+      "repeat_ciphertext_equal": false,
+      "repeat_envelope_equal": false
+    },
+    {
+      "input": "binary",
+      "mode": "CTR",
+      "plaintext_bytes": 1031,
+      "ciphertext_bytes": 1031,
+      "iv_bytes": 16,
+      "padding_bytes": 0,
+      "iv_hex": "bda7edaec850fa37c6b2d079c0ebce5d",
+      "ciphertext_hex": "0e67a69cdda506d5e8d7f04299139bc6b252aac7c9c85e636b4e792bd873255f9468ed06caca3a3626d743841ef9d7754fd47a188a12773a4a1d0bc74542dd2c4b786f3affb848230499415d4ea26e78f6ceaaaabd57cf6a816f3ed1e6898805222d88bf23808f36cbfc8b7acdd4b36afe8ee948f7886339e0122076dace23d8b3e4bda4d33afd7b6534be0564973b92673809979eadc7229c4dc3c792f5173e153124261752b10cdc7cf11bc16ec2f97422309d9d1daf5f6a026b746120b9d0ea63fef039f5129f4ed138d0ec93437d5d41c0d344eccc4b336ffa707a76e1da43117c3f2f7622ab9e78acb659fcb20d2d1adbb66d5ec9bdd7ac5fed8f37aba90cdb93a80be12bc2f78b421ac543a6b813c79b75d463027d5f8ab7eae79235d5d1e5afc67b0944b16ee470389e4ae8ee18fdd7a3dc54b900c530d9b186fed5e596eb1661b745b6a813c9677f1e1060785dd357a029341594e38ceeed1b13d7ec7c784dfe4509d888d92333a440f00848dc67892a4344f7fc08e898fe5431833f30727aeb0ddad179959b3484a76683d5b2100c7078c00c9a2546a188b31bd8a8fb117b86d82b9f3cff1b7ba1ec88821c103b615cb61ca992adcdc1a45ac4f2d290ef2015f2d0d311b31e68d30a66a876433d2ac39df7565fa295a09261edd66c931e35df885c1748b34aec0785baad7b36d53f54c0a06e511374cea8fd7801ca8a97880b021666a0f13c040932b8cac002b5e667afc06842f4fa0b7d7360a275ed178defd4afbaf5bb38559f2dbf017b59e103e2f81665214ade2e5d4f0d56490d93581af1131fcd007fb9c388627458e502bd5378377fe5b370310eb617a0a1a707c63a3afbbf40bfbff3adbfa8b0bed4eab1b3debbab5704165009420a9e26fbc621ea8ef37f8e7c7b9f8999b76773405df412a167ab3a589d26bd8bac096ada2739712ebc55ca2bd59661b848010ad7cb19179c2d503f6bd74fbc5146ac50b810e41cc913b318433a6594d531eece1f9c0c857e2d71a2dab53b7104e9e9a5fa222c56ab62d0ff2b4dcafc70c4ffba3e36ea492fb93111e540bbcf3107b487d73b90868dc25d0e0152d665e0594a98a3bf321b6d9aa60e5713b189fae17959893935a1f93bcfa1413f2029dabc2a363b414e62a615b19742092eaaf9f4068145fac78444789012f7612d7ca43ac401edd6288314345142e4a459da0ee704a6d7c6af5968b4d2da6cc089cc097274646cfab2dad33a8679f4b4417ae08ecc3126753f255b651df8ed3a3e5864b2d99f343a3fbb215c641d26e6b57fe866ce713b7135e818841233c5138c5098dd686ba87445037f8b6ffaeb460c7f4c15698d75c7a7e02015d016818d355750cd7d04dd80de0361b15b186730007302dda57152463943e45ab87a56bade800aeaa378b8bce685cc3198e525f0e00641f5f7d8685d674547a097",
+      "tag_hex": "3848b98f82f597518eb1d5c8ffda473d77333ef978c5cbf35f4f8f6904d51429",
+      "repeat_iv_equal": false,
+      "repeat_ciphertext_equal": false,
+      "repeat_envelope_equal": false
+    }
+  ],
+  "E03_dh": {
+    "group": "RFC3526 group14",
+    "p_hex": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aacaa68ffffffffffffffff",
+    "p_bits": 2048,
+    "g": 2,
+    "alice_public_hex": "531f2ba3418b0aece5416e0d63355eb16aeb39d9295bcab35013f7c46599263ad2afbb72649e4b8abe1f503ac950245576a09165d6e7d413cb24515ac0e31b6bb3db538b3278cc5d4edd76e37ef8a45b065d998f1a150a8197713d916d0123284d353fb4c5731c2eed17e3f79fa397e1e39a59adc961ef792820daf27df9fc5a80b2a9fea0b63a6a863be093de7c440175b2ae87b1fafb8f487463806ee813569b9ad86a2aa7a9353bdc3cade99609c784f12a66939e2488cf14dee12ce5e91a26753990fbc17d6c2590a80d402d2fdd0ad8eb2990ab0146249bf9fbeb9808b13e943a055037a9530c49273ff2e068e9e6c0c6d73521d5ec1cd5c036401a0e47",
+    "bob_public_hex": "4055edc5f4492e1c2b8511a1a79c1e89349121ab9d938ebeba2ffbb9ffde6083eb78efdfc5b8a7d55e4abd69d38843de05ee73cefee004ed35bd98b846ae2f107d1357e61e23dd843e89258cd2de15f000ccd8f68ec590196fe3205ca85a899268a373cb49e90fca0c1c39b17a8a2b9c7ef28c83f7a728e1f32adaddc2d501cd507c5a4f349788829a26ee4661e088f454f0128fc5ef3fd22d5dd7335bf39996c968f7f2e01525baaf4675ddb7475f45dd3effa629c663789dc8c73b54e7ca3366439ab7d75d79f121c7aecfba051441489dd31e133ccc8b146dc4fa3c24f8774ccb7fab7f3466c4f10cd15e1f5f037c8d6c65b242ed1953633b429567117a84",
+    "alice_shared_sha256": "094d558adcc154d76d3810c5b4658d976c1f2b257ddbf48df89615046f9f3d26",
+    "bob_shared_sha256": "094d558adcc154d76d3810c5b4658d976c1f2b257ddbf48df89615046f9f3d26",
+    "shared_equal": true,
+    "shared_bytes": 256,
+    "encryption_keys_equal": true,
+    "mac_keys_equal": true,
+    "derived_encryption_and_mac_keys_distinct": true,
+    "note": "Only equality checks and shared-secret hashes logged; no private exponent or derived key."
+  },
+  "E04_signed_envelope": {
+    "version": 1,
+    "label": "ICS344-Northbridge-v1",
+    "student_id": "202245540",
+    "mode": "CTR",
+    "alice_dh": "2c20d40604c4e341707bed8af18944cae5c4d9f27ae557aaf28e33ab6623f2f6a8cf6190d54bb338f8d569193e349c9d4b80cc03938faf9e811de60671da3a9dc686c34c7c2474c477dee809b90cbf518dc6ed6ea562f688fc3b907729201439633993e111dcae65840ecc2a30c7f1ca6e30ce6ba0757f27ebe78e46ea402719dca04e7466e900646f39cae35f6baf7165b5c2e67efa4cc7e468f4fa38cfb1312e9a5a955d1a739e9927b599f336f5338bf940f8a2e09cb5a6c1d4423c8cfe5df8bc6f036b946f8152771241f1486a5373091afa32ceb21f7f1c18c9f4f174d996e81e44def09ac1f52c3dc13b245c67aca43e9e7c92d59431bcf1827947b258",
+    "bob_dh": "d51f4477a96ecb040e7a357a6f60ef877017e064b15ad4ea6b13ff20ce5a05fbd8af0de2aef9f1b2a8814285d00812faf2e08de99d1a8b4f823c03474711590a041bac2636a133f1f267423f50229b42456922942dc2705058cfc21de7463653778136b4094d41114fbdf31701b11df4d00de556deda063e04b47a745cc2e81fd1046ea6a3a0d7cd007b80546e555b7dcfcada3b3905c10954fd10694e96a310018052d3d2c1edab09ec798748d896aa71419c72d53b2edc80811b33ba4391c9a4c74425e6e187b6c2c2a44bafd5d5edde95814ecdbb2f7ee8a84ffc13dd5e5b66f970e6be47531eb9c3e988e0cdd8cd48403af6170dcf7a3c0dd1ac56c87e3b",
+    "salt": "XPkPyRdAY5JLZfVT44lArJ65odswcBe+oQfXRJjOzYY=",
+    "iv": "vaftrshQ+jfGstB5wOvOXQ==",
+    "ciphertext": "DmemnN2lBtXo1/BCmRObxrJSqsfJyF5ja055K9hzJV+UaO0Gyso6NibXQ4Qe+dd1T9R6GIoSdzpKHQvHRULdLEt4bzr/uEgjBJlBXU6ibnj2zqqqvVfPaoFvPtHmiYgFIi2IvyOAjzbL/It6zdSzav6O6Uj3iGM54BIgdtrOI9iz5L2k0zr9e2U0vgVklzuSZzgJl56txyKcTcPHkvUXPhUxJCYXUrEM3HzxG8Fuwvl0IjCdnR2vX2oCa3RhILnQ6mP+8Dn1Ep9O0TjQ7JNDfV1BwNNE7MxLM2/6cHp24dpDEXw/L3Yiq554rLZZ/LINLRrbtm1eyb3XrF/tjzerqQzbk6gL4SvC94tCGsVDprgTx5t11GMCfV+Kt+rnkjXV0eWvxnsJRLFu5HA4nkro7hj916PcVLkAxTDZsYb+1eWW6xZht0W2qBPJZ38eEGB4XdNXoCk0FZTjjO7tGxPX7Hx4Tf5FCdiI2SMzpEDwCEjcZ4kqQ0T3/AjomP5UMYM/MHJ66w3a0XmVmzSEp2aD1bIQDHB4wAyaJUahiLMb2Kj7EXuG2CufPP8be6HsiIIcEDthXLYcqZKtzcGkWsTy0pDvIBXy0NMRsx5o0wpmqHZDPSrDnfdWX6KVoJJh7dZskx4134hcF0izSuwHhbqtezbVP1TAoG5RE3TOqP14AcqKl4gLAhZmoPE8BAkyuMrAArXmZ6/AaEL0+gt9c2Cide0Xje/Ur7r1uzhVny2/AXtZ4QPi+BZlIUreLl1PDVZJDZNYGvETH80Af7nDiGJ0WOUCvVN4N3/ls3AxDrYXoKGnB8Y6Ovu/QL+/862/qLC+1Oqxs967q1cEFlAJQgqeJvvGIeqO83+OfHufiZm3Z3NAXfQSoWerOlidJr2LrAlq2ic5cS68Vcor1ZZhuEgBCtfLGRecLVA/a9dPvFFGrFC4EOQcyROzGEM6ZZTVMe7OH5wMhX4tcaLatTtxBOnppfoiLFarYtD/K03K/HDE/7o+NupJL7kxEeVAu88xB7SH1zuQho3CXQ4BUtZl4FlKmKO/MhttmqYOVxOxifrheVmJOTWh+TvPoUE/ICnavCo2O0FOYqYVsZdCCS6q+fQGgUX6x4REeJAS92EtfKQ6xAHt1iiDFDRRQuSkWdoO5wSm18avWWi00tpswInMCXJ0ZGz6strTOoZ59LRBeuCOzDEmdT8lW2Ud+O06PlhkstmfNDo/uyFcZB0m5rV/6GbOcTtxNegYhBIzxROMUJjdaGuodEUDf4tv+utGDH9MFWmNdcen4CAV0BaBjTVXUM19BN2A3gNhsVsYZzAAcwLdpXFSRjlD5Fq4ela63oAK6qN4uLzmhcwxmOUl8OAGQfX32GhdZ0VHoJc=",
+    "tag": "OEi5j4L1l1GOsdXI/9pHPXczPvl4xcvzX0+PaQTVFCk=",
+    "signature": "l7f83kum/WDmHBUkOVBNnUPZE5bn2VrawmAwsIRFTXYwz2BujmFQkPRSMLlbVew3VIJUZn7Bx3Ezk44xruJT6xbSDH1qjKqPehMW5U1AOYVwETrjkHBwKuYvSTlqUJXztjhPb7w81oYUYWt4MrSj9XumJEE6SmpHX6tvqviHtZDyNn88RzUqsOjvPIO0dPRJq3LldfMbPNSt9YrCNZzWlYuFByYX+kJOAck3CK43l4sDlou0RJ8nA2ws7KIcHO9GKZICcYPt4wctZXWBGP6TUN0cTUZ82x2Xazb7getSn8gGgr/wcpom/lNXWHge/tHtjnzLPg1ij4dCqL0L0v5lpw=="
+  },
+  "E05_tests": [
+    {
+      "test_id": "T01",
+      "property": "round trip",
+      "condition": "text, CBC, 49 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T02",
+      "property": "round trip",
+      "condition": "text, CTR, 49 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T03",
+      "property": "round trip",
+      "condition": "binary, CBC, 1031 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T04",
+      "property": "round trip",
+      "condition": "binary, CTR, 1031 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T05",
+      "property": "round trip",
+      "condition": "empty, CBC, 0 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T06",
+      "property": "round trip",
+      "condition": "empty, CTR, 0 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T07",
+      "property": "round trip",
+      "condition": "aligned, CBC, 16 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T08",
+      "property": "round trip",
+      "condition": "aligned, CTR, 16 bytes",
+      "expected": "Exact plaintext recovered",
+      "actual": "Exact plaintext recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T09",
+      "property": "repeated-message behaviour",
+      "condition": "Same plaintext; new DH, salt and IV",
+      "expected": "All four repeats differ",
+      "actual": "All four repeats differ",
+      "passed": true
+    },
+    {
+      "test_id": "T10",
+      "property": "envelope tamper",
+      "condition": "Flip one ciphertext bit; retain tag and signature",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T11",
+      "property": "isolated HMAC tamper",
+      "condition": "Same flip; verify MAC independently",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T12",
+      "property": "incorrect recipient key",
+      "condition": "Different Bob DH private key",
+      "expected": "Reject",
+      "actual": "Rejected (ValueError)",
+      "passed": true
+    },
+    {
+      "test_id": "T13",
+      "property": "incorrect HMAC key",
+      "condition": "Different 32-byte MAC key",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T14",
+      "property": "valid signature",
+      "condition": "Unchanged signed envelope",
+      "expected": "Signature accepted",
+      "actual": "Signature accepted",
+      "passed": true
+    },
+    {
+      "test_id": "T15",
+      "property": "modified signature input",
+      "condition": "Changed ciphertext in signed envelope",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T16",
+      "property": "DH and HKDF",
+      "condition": "Independent Alice/Bob calculations",
+      "expected": "Shared bytes and derived keys match",
+      "actual": "Shared bytes and derived keys match",
+      "passed": true
+    },
+    {
+      "test_id": "T17",
+      "property": "untrusted signer",
+      "condition": "Different trusted RSA public key",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T18",
+      "property": "CTR baseline",
+      "condition": "Same key; distinct counter starts",
+      "expected": "Known-plaintext recovery fails",
+      "actual": "Recovery failed",
+      "passed": true
+    },
+    {
+      "test_id": "T19",
+      "property": "CTR misuse",
+      "condition": "Only second counter start changed to first",
+      "expected": "Full second message recovered",
+      "actual": "Full second message recovered",
+      "passed": true
+    },
+    {
+      "test_id": "T20",
+      "property": "CTR correction",
+      "condition": "Restore fresh second counter start",
+      "expected": "Known-plaintext recovery fails",
+      "actual": "Recovery failed",
+      "passed": true
+    },
+    {
+      "test_id": "T21",
+      "property": "metadata tamper",
+      "condition": "Replace transmitted IV",
+      "expected": "Reject",
+      "actual": "Rejected (InvalidSignature)",
+      "passed": true
+    },
+    {
+      "test_id": "T22",
+      "property": "DH validation",
+      "condition": "Public value y=1",
+      "expected": "Reject",
+      "actual": "Rejected (ValueError)",
+      "passed": true
+    },
+    {
+      "test_id": "T23",
+      "property": "identity binding",
+      "condition": "Wrong expected student label",
+      "expected": "Reject",
+      "actual": "Rejected (ValueError)",
+      "passed": true
+    },
+    {
+      "test_id": "T24",
+      "property": "private-key protection",
+      "condition": "Encrypted PKCS8; incorrect password",
+      "expected": "Reject private-key load",
+      "actual": "Encrypted PKCS8; wrong password rejected",
+      "passed": true
+    },
+    {
+      "test_id": "T25",
+      "property": "hash versus MAC",
+      "condition": "Attacker replaces payload and unkeyed digest",
+      "expected": "Hash accepts; original MAC rejects",
+      "actual": "Hash accepts; original MAC rejects",
+      "passed": true
+    }
+  ],
+  "E06_ctr_misuse": {
+    "prediction": "Reusing key and counter stream gives C1 XOR C2 = P1 XOR P2, allowing full recovery of equal-length P2 given P1.",
+    "controlled_change": "Second CTR counter start only; key and plaintexts fixed.",
+    "plaintext_1": "Known message: salary=5000; user=ALICE.",
+    "plaintext_2": "Secret report: salary=9000; user=BOB!!!",
+    "first_iv_hex": "bccf631e54cc63c7a0307a42493799af",
+    "ciphertext_1_hex": "99c0e70b984f94ff3ddbd5056c2c45d1dad485a8d1d8e6e05f170d254d7c9ea7a063870e8db9ae",
+    "xor_plaintexts_hex": "180b0c050b544d1716030e15110000000000000000000c0000000000000000000003030b62640f",
+    "baseline": {
+      "second_iv_hex": "71f87902830d4d67911701d7e2474d05",
+      "ciphertext_2_hex": "641ac883d909a5976613d07bf720371f99c72c96c69a73e1e0ddcf409ddfd934310f9a4c253c71",
+      "xor_ciphertexts_hex": "fdda2f88414631685bc8057e9b0c72ce4313a93e17429501bfcac265d0a34793916c1d42a885df",
+      "xor_matches_plaintexts": false,
+      "recovered_plaintext_hex": "b6b440ff2f665c0d28bb6419fe3652bd227fc84c6e7fa0318ffaf945a5d022e1ac2d510bebc0f1",
+      "recovered_exact": false
+    },
+    "misuse": {
+      "second_iv_hex": "bccf631e54cc63c7a0307a42493799af",
+      "ciphertext_2_hex": "81cbeb0e931bd9e82bd8db107d2c45d1dad485a8d1d8eae05f170d254d7c9ea7a0608405efdda1",
+      "xor_ciphertexts_hex": "180b0c050b544d1716030e15110000000000000000000c0000000000000000000003030b62640f",
+      "xor_matches_plaintexts": true,
+      "recovered_plaintext_hex": "536563726574207265706f72743a2073616c6172793d393030303b20757365723d424f42212121",
+      "recovered_exact": true
+    },
+    "correction": {
+      "second_iv_hex": "bd102d7e0ad5dcc6cdab6dbebd6e8b24",
+      "ciphertext_2_hex": "7920008f88f784b17d0e045f036e42923a1d54a1c184aef9d9e56d14334f90a42fa8ba344e238a",
+      "xor_ciphertexts_hex": "e0e0e78410b8104e40d5d15a6f420743e0c9d109105c481986f260317e330e038fcb3d3ac39a24",
+      "xor_matches_plaintexts": false,
+      "recovered_plaintext_hex": "ab8e88f37e987d2b33a6b03d0a78273081a5b07b69617d29b6c25b110b406b71b28a717380df0a",
+      "recovered_exact": false
+    },
+    "authenticity_note": "Attack is passive. Adding a valid HMAC does not conceal XOR leakage."
+  },
+  "E07_hash_vs_mac": {
+    "original": "pay=100",
+    "replacement": "pay=900",
+    "original_hash": "9f619ce26093e566ad1cdee44d2098461e02c6614548d58c20d2b88e122cd8ad",
+    "replacement_hash": "1de2dfeba1700efd0ad78e1062c611258f9ca86787511a176e403485cca50788",
+    "unkeyed_hash_accepts_replacement": true,
+    "old_hmac_accepts_replacement": false
+  },
+  "summary": {
+    "total": 25,
+    "passed": 25
+  }
+}

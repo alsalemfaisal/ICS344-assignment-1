@@ -1,0 +1,30 @@
+T01 PASS round trip : Exact plaintext recovered
+T02 PASS round trip : Exact plaintext recovered
+T03 PASS round trip : Exact plaintext recovered
+T04 PASS round trip : Exact plaintext recovered
+T05 PASS round trip : Exact plaintext recovered
+T06 PASS round trip : Exact plaintext recovered
+T07 PASS round trip : Exact plaintext recovered
+T08 PASS round trip : Exact plaintext recovered
+T09 PASS repeated-message behaviour : All four repeats differ
+T10 PASS envelope tamper : Rejected (InvalidSignature)
+T11 PASS isolated HMAC tamper : Rejected (InvalidSignature)
+T12 PASS incorrect recipient key : Rejected (ValueError)
+T13 PASS incorrect HMAC key : Rejected (InvalidSignature)
+T14 PASS valid signature : Signature accepted
+T15 PASS modified signature input : Rejected (InvalidSignature)
+T16 PASS DH and HKDF : Shared bytes and derived keys match
+T17 PASS untrusted signer : Rejected (InvalidSignature)
+T18 PASS CTR baseline : Recovery failed
+T19 PASS CTR misuse : Full second message recovered
+T20 PASS CTR correction : Recovery failed
+T21 PASS metadata tamper : Rejected (InvalidSignature)
+T22 PASS DH validation : Rejected (ValueError)
+T23 PASS identity binding : Rejected (ValueError)
+T24 PASS private-key protection : Encrypted PKCS8; wrong password rejected
+T25 PASS hash versus MAC : Hash accepts; original MAC rejects
+{"total": 25, "passed": 25}
+/workspace/scratch/7da9f1434b21/ICS344_Faisal_Alsalem_202245540_FINAL/secure_exchange.py:30: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
+  PARAMS = dh.DHParameterNumbers(P, 2).parameters()
+/workspace/scratch/7da9f1434b21/ICS344_Faisal_Alsalem_202245540_FINAL/secure_exchange.py:65: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
+  return dh.DHPublicNumbers(y, dh.DHParameterNumbers(P, 2)).public_key()

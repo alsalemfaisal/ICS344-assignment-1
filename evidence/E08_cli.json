@@ -1,0 +1,36 @@
+[
+  {
+    "command": "setup",
+    "exit_code": 0,
+    "result": "Created encrypted private keys and trusted public keys."
+  },
+  {
+    "command": "send/receive CBC",
+    "exit_code": 0,
+    "exact_match": true,
+    "sha256": "d62556d95f6d47b0a451bd1d7b4d90a26275de8f4d4a6a72e2d78ae6b14a4510"
+  },
+  {
+    "command": "receive tampered CBC",
+    "exit_code": 1,
+    "output_created": false,
+    "result": "Rejected: operation failed; no new output released."
+  },
+  {
+    "command": "send/receive CTR",
+    "exit_code": 0,
+    "exact_match": true,
+    "sha256": "d62556d95f6d47b0a451bd1d7b4d90a26275de8f4d4a6a72e2d78ae6b14a4510"
+  },
+  {
+    "command": "receive tampered CTR",
+    "exit_code": 1,
+    "output_created": false,
+    "result": "Rejected: operation failed; no new output released."
+  },
+  {
+    "command": "send to existing output",
+    "exit_code": 1,
+    "existing_content_preserved": true
+  }
+]

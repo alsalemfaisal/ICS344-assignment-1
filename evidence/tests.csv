@@ -1,0 +1,26 @@
+test_id,property,condition,expected,actual,passed
+T01,round trip,"text, CBC, 49 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T02,round trip,"text, CTR, 49 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T03,round trip,"binary, CBC, 1031 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T04,round trip,"binary, CTR, 1031 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T05,round trip,"empty, CBC, 0 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T06,round trip,"empty, CTR, 0 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T07,round trip,"aligned, CBC, 16 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T08,round trip,"aligned, CTR, 16 bytes",Exact plaintext recovered,Exact plaintext recovered,True
+T09,repeated-message behaviour,"Same plaintext; new DH, salt and IV",All four repeats differ,All four repeats differ,True
+T10,envelope tamper,Flip one ciphertext bit; retain tag and signature,Reject,Rejected (InvalidSignature),True
+T11,isolated HMAC tamper,Same flip; verify MAC independently,Reject,Rejected (InvalidSignature),True
+T12,incorrect recipient key,Different Bob DH private key,Reject,Rejected (ValueError),True
+T13,incorrect HMAC key,Different 32-byte MAC key,Reject,Rejected (InvalidSignature),True
+T14,valid signature,Unchanged signed envelope,Signature accepted,Signature accepted,True
+T15,modified signature input,Changed ciphertext in signed envelope,Reject,Rejected (InvalidSignature),True
+T16,DH and HKDF,Independent Alice/Bob calculations,Shared bytes and derived keys match,Shared bytes and derived keys match,True
+T17,untrusted signer,Different trusted RSA public key,Reject,Rejected (InvalidSignature),True
+T18,CTR baseline,Same key; distinct counter starts,Known-plaintext recovery fails,Recovery failed,True
+T19,CTR misuse,Only second counter start changed to first,Full second message recovered,Full second message recovered,True
+T20,CTR correction,Restore fresh second counter start,Known-plaintext recovery fails,Recovery failed,True
+T21,metadata tamper,Replace transmitted IV,Reject,Rejected (InvalidSignature),True
+T22,DH validation,Public value y=1,Reject,Rejected (ValueError),True
+T23,identity binding,Wrong expected student label,Reject,Rejected (ValueError),True
+T24,private-key protection,Encrypted PKCS8; incorrect password,Reject private-key load,Encrypted PKCS8; wrong password rejected,True
+T25,hash versus MAC,Attacker replaces payload and unkeyed digest,Hash accepts; original MAC rejects,Hash accepts; original MAC rejects,True
