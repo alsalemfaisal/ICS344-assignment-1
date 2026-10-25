@@ -1,127 +1,128 @@
-# ICS344 Applied Cryptography
+# ICS344 Applied Cryptography - Secure Exchange
 
 Faisal Alsalem - 202245540
 
-A Python command-line prototype for the Northbridge Analytics secure exchange
-assignment. It includes AES-CBC and AES-CTR, HMAC-SHA256, Diffie-Hellman key
-establishment, RSA-PSS signatures and a controlled CTR counter-reuse experiment.
+This is a command-line Python prototype for the Northbridge Analytics secure exchange
+assignment. Alice encrypts and signs a file, the protected file is saved as JSON, and
+Bob checks it and recovers the original. It uses:
 
-## Quick start
-
-```bash
-python -m pip install -r requirements.txt
-python run_all.py
-```
-
-The complete checks run with student ID 202245540 and save fresh results under
-`evidence/`. A successful run reports 25 passing security tests and six passing
-CLI checks. No private keys or passwords are included in this folder.
+- AES-256 in CBC and CTR mode
+- HMAC-SHA256 for integrity
+- Diffie-Hellman (RFC 3526 group 14) with HKDF to derive the keys
+- RSA-PSS signatures
+- a CTR nonce-reuse experiment for Task 3
 
 ## Files
 
-- `secure_exchange.py`: CLI and core cryptographic functions.
-- `test_suite.py`: 25 checks, fresh non-sensitive 1031-byte file, JSON/CSV evidence.
-- `cli_smoke.py`: six checks using real setup/send/receive CLI processes.
-- `run_all.py`: runs both suites and writes their execution logs.
-- `report.pdf`: report covering Tasks 1-6.
-- `evidence/results.json`: E01-E07; expected and actual results in E05.
-- `evidence/E08_cli.json`: separate command-line integration results.
-- `evidence/test_run.log`: execution log, including the FFDH deprecation warning.
-- `evidence/alice_sign_public.pem`: public verification key for the example envelope.
-- `test_data/`: short text and fresh, randomly generated binary test file.
+- `secure_exchange.py` - the program (setup, send, receive) and all crypto functions
+- `test_suite.py` - 25 security tests, writes results to `evidence/`
+- `cli_smoke.py` - 6 checks that run the real setup/send/receive commands
+- `run_all.py` - runs both of the above and saves the logs
+- `report.pdf` - the report (Tasks 1-6)
+- `test_data/` - a short text message and a random 1031-byte file
+- `evidence/` - results from the last run:
+  - `results.json` - evidence items E01-E07 (E05 is the test table)
+  - `tests.csv` - the same test table as CSV
+  - `E08_cli.json` - command-line check results
+  - `test_run.log`, `cli_run.log` - console output
+  - `sample_ctr_envelope.json` and `alice_sign_public.pem` - an example protected
+    message and the public key that verifies its signature
 
-No private keys, key passwords, DH exponents or symmetric keys are supplied.
-The archived sample envelope's temporary receiving key was destroyed after testing;
-use the CLI to create a new decryptable envelope. Its signature remains independently
-verifiable using `evidence/alice_sign_public.pem`.
+No private keys, passwords or symmetric keys are included. The private key for the
+sample envelope was deleted after the run, so it can only be signature-checked, not
+decrypted. Use the commands below to make a new one.
 
-## Environment and installation
+## Setup
 
-Python 3.11+ (tested with the exact version in E01). From this directory:
+Needs Python 3.11 or newer.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # Windows: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
 
-Windows PowerShell: activate with `.venv\Scripts\Activate.ps1` instead.
-The dependency is pinned to the version used to generate the evidence.
-Finite-field DH is deprecated in cryptography 50.0.2 but still works; its warning
-is expected and deliberately retained. Keep this pin for this laboratory.
-For future deployment, use a supported authenticated ephemeral ECDH protocol.
+`cryptography` is pinned to 50.0.2, the version used for the evidence. This version
+prints a deprecation warning for finite-field Diffie-Hellman. It still works and the
+warning is expected.
 
-## Run all tests and regenerate evidence
+## Running the tests
+
+```bash
+python run_all.py
+```
+
+or run each part on its own:
 
 ```bash
 python test_suite.py --student-id 202245540
 python cli_smoke.py --student-id 202245540
 ```
 
-Both commands must exit with status 0. The first reports 25/25 checks; the second
-reports six successful CLI checks. A new random file is generated on every test-suite
-run. Existing evidence/test data are replaced. Random public values, signatures,
-IVs, ciphertexts and file hashes will change. Security properties should not.
-The report describes the archived run using ID 202245540. If inputs or code change,
-update the report to match the new measurements.
+You should see 25/25 tests passing and 6 CLI checks passing. Each run generates a new
+random test file and replaces the files in `evidence/`. Random values (keys, IVs,
+ciphertexts, signatures) change on every run, but the pass/fail results should not.
 
-## Exact sender/receiver demonstration
+## Sender and receiver
 
-Use a new state directory and new output filenames each time. Each command prompts
-for the same strong laboratory key password (at least 12 characters). Use no real
-institutional password. The same password is only a local simulation convenience;
-Alice and Bob would manage their own private keys on separate computers.
+Each command asks for a password for the private keys (at least 12 characters).
+Use the same one for all commands and use a new state folder each time.
 
 ```bash
 python secure_exchange.py setup --state demo_state
+
 python secure_exchange.py send --state demo_state --student-id 202245540 --input test_data/random_1031.bin --output transfer_ctr.json --mode CTR
 python secure_exchange.py receive --state demo_state --student-id 202245540 --input transfer_ctr.json --output recovered_ctr.bin
+
 python secure_exchange.py send --state demo_state --student-id 202245540 --input test_data/random_1031.bin --output transfer_cbc.json --mode CBC
 python secure_exchange.py receive --state demo_state --student-id 202245540 --input transfer_cbc.json --output recovered_cbc.bin
-python -c "from pathlib import Path; assert Path('recovered_ctr.bin').read_bytes()==Path('test_data/random_1031.bin').read_bytes(); assert Path('recovered_cbc.bin').read_bytes()==Path('test_data/random_1031.bin').read_bytes(); print('Both round trips match')"
 ```
 
-For unattended local tests only, `ICS344_KEY_PASSWORD` may supply the password.
-Do not put it in committed code or logs. `cli_smoke.py` sets a fresh random value
-only in its child-process environment and deletes temporary private-key files.
+Check that both recovered files match the original:
 
-To simulate two computers, use separately protected directories: Alice needs only
-`alice_sign_private.pem` and Bob's trusted `bob_dh_public.pem`; Bob needs only
-`bob_dh_private.pem` and Alice's trusted `alice_sign_public.pem`. The single shared
-`demo_state` directory is a local teaching convenience. Transfer only the JSON
-artifact over the insecure channel. Provision and verify public keys out of band;
-copying an attacker-provided public key alongside its message does not establish trust.
+```bash
+python -c "from pathlib import Path; o=Path('test_data/random_1031.bin').read_bytes(); assert Path('recovered_ctr.bin').read_bytes()==o and Path('recovered_cbc.bin').read_bytes()==o; print('Both round trips match')"
+```
 
-## Manual tamper demonstration
+For automated runs you can set the password in the `ICS344_KEY_PASSWORD` environment
+variable instead of typing it. `cli_smoke.py` does this with a random password.
+
+Note: `demo_state` holds both Alice's and Bob's keys only so the demo runs on one
+computer. In a real setup Alice keeps `alice_sign_private.pem` and Bob's public key
+`bob_dh_public.pem`; Bob keeps `bob_dh_private.pem` and Alice's public key
+`alice_sign_public.pem`. Only the JSON file goes over the insecure channel. Public keys
+have to be exchanged and checked beforehand, not sent along with the message.
+
+## Tampering demo
 
 ```bash
 python -c "import json; p=json.load(open('transfer_ctr.json')); p['iv']='AAAAAAAAAAAAAAAAAAAAAA=='; json.dump(p,open('tampered.json','w'))"
 python secure_exchange.py receive --state demo_state --student-id 202245540 --input tampered.json --output should_not_exist.bin
 ```
 
-Expected: exit 1, generic rejection, no new plaintext file. Use `cli_smoke.py` for
-a repeatable ciphertext-tampering check without editing anything manually.
+This should print `Rejected` and exit with code 1, without creating
+`should_not_exist.bin`. `cli_smoke.py` runs a similar check on the ciphertext.
 
-## Wire format and ordering
+## Message format
 
-Canonical JSON (sorted keys, compact separators, ASCII); binary fields are Base64.
-`version`, `label`, `student_id`, `mode`, `alice_dh`, `bob_dh`, `salt`, `iv`, and
-`ciphertext` form the body. HMAC-SHA256 authenticates the entire canonical body.
-RSA-PSS signs body plus tag. Signature bytes are excluded from their own input.
-The receiver uses pinned local trust, validates the signature, derives keys, verifies
-HMAC, and only then decrypts and removes CBC padding. All fields except the final
-signature are MACed, and the signature authenticates that MAC as well.
+The protected file is JSON with sorted keys and no extra spaces, so both sides
+compute the MAC and signature over the same bytes. Binary values are Base64.
 
-The signature binds the encrypted file/message, including the DH context. A standalone
-plaintext signature is not stored. No claim of peer liveness or replay prevention is
-made. Bob's static DH key means the prototype does not provide forward secrecy
-against later compromise of that key. Large files are processed in memory; this is
-an arbitrary-length laboratory prototype within available memory, not a streaming tool.
-CTR consumes consecutive counters from a random 128-bit initial counter; each
-normal envelope has a freshly derived key. Never reuse a key/counter stream.
+- The body is `version`, `label`, `student_id`, `mode`, `alice_dh`, `bob_dh`, `salt`,
+  `iv` and `ciphertext`.
+- `tag` is HMAC-SHA256 over the whole body (encrypt-then-MAC).
+- `signature` is RSA-PSS over the body plus the tag.
 
-## Submission notes
+Bob checks the signature first, then derives the keys, checks the HMAC, and only then
+decrypts (and removes the CBC padding).
 
-When creating another submission archive, omit `demo_state`, `.venv`, recovered files,
-and any newly generated private keys or passwords. Keep a private local working
-environment for the assessor's demonstration.
+## Limitations
+
+- Bob's DH key is static, so there is no forward secrecy if it is stolen later.
+- There is no replay protection; an old valid message would be accepted again.
+- Files are read into memory, so very large files are not supported.
+
+## Submission
+
+Leave out `demo_state`, `.venv`, recovered files and any private keys or passwords
+when creating the submission zip.

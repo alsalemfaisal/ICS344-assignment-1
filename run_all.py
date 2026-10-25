@@ -17,7 +17,8 @@ def main():
     for script, log_name in suites:
         command = [sys.executable, script, '--student-id', args.student_id]
         result = subprocess.run(command, cwd=folder, capture_output=True, text=True)
-        log = result.stdout + result.stderr
+        # Keep logs portable: show paths relative to the project folder.
+        log = (result.stdout + result.stderr).replace(str(folder), '.')
         (evidence / log_name).write_text(log)
         print(f'Running {script}')
         print(log, end='')

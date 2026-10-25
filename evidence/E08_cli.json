@@ -8,7 +8,7 @@
     "command": "send/receive CBC",
     "exit_code": 0,
     "exact_match": true,
-    "sha256": "d62556d95f6d47b0a451bd1d7b4d90a26275de8f4d4a6a72e2d78ae6b14a4510"
+    "sha256": "636d9e09c8ca44dc409c919ce1369bcabadb11f7c39d03fb12b53d17bbbae65e"
   },
   {
     "command": "receive tampered CBC",
@@ -20,7 +20,7 @@
     "command": "send/receive CTR",
     "exit_code": 0,
     "exact_match": true,
-    "sha256": "d62556d95f6d47b0a451bd1d7b4d90a26275de8f4d4a6a72e2d78ae6b14a4510"
+    "sha256": "636d9e09c8ca44dc409c919ce1369bcabadb11f7c39d03fb12b53d17bbbae65e"
   },
   {
     "command": "receive tampered CTR",

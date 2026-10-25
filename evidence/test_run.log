@@ -24,7 +24,7 @@ T23 PASS identity binding : Rejected (ValueError)
 T24 PASS private-key protection : Encrypted PKCS8; wrong password rejected
 T25 PASS hash versus MAC : Hash accepts; original MAC rejects
 {"total": 25, "passed": 25}
-/workspace/scratch/7da9f1434b21/ICS344_Faisal_Alsalem_202245540_FINAL/secure_exchange.py:30: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
+./secure_exchange.py:30: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
   PARAMS = dh.DHParameterNumbers(P, 2).parameters()
-/workspace/scratch/7da9f1434b21/ICS344_Faisal_Alsalem_202245540_FINAL/secure_exchange.py:65: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
+./secure_exchange.py:65: CryptographyDeprecationWarning: Diffie-Hellman over finite fields (FFDH) is deprecated and support will be removed in a future release. Use a more modern key exchange algorithm.
   return dh.DHPublicNumbers(y, dh.DHParameterNumbers(P, 2)).public_key()
