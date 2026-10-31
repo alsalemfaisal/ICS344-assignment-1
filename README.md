@@ -9,7 +9,6 @@ establishment, RSA-PSS signatures and a controlled CTR counter-reuse experiment.
 ## Quick start
 
 ```bash
-python -m pip install -r requirements.txt
 python run_all.py
 ```
 
@@ -23,7 +22,7 @@ CLI checks. No private keys or passwords are included in this folder.
 - `test_suite.py`: 25 checks, fresh non-sensitive 1031-byte file, JSON/CSV evidence.
 - `cli_smoke.py`: six checks using real setup/send/receive CLI processes.
 - `run_all.py`: runs both suites and writes their execution logs.
-- `report.pdf` and `report.md`: report covering Tasks 1-6; editable Markdown source.
+- `report.pdf`: report covering Tasks 1-6.
 - `evidence/results.json`: E01-E07; expected and actual results in E05.
 - `evidence/E08_cli.json`: separate command-line integration results.
 - `evidence/test_run.log`: execution log, including the FFDH deprecation warning.
@@ -120,21 +119,4 @@ an arbitrary-length laboratory prototype within available memory, not a streamin
 CTR consumes consecutive counters from a random 128-bit initial counter; each
 normal envelope has a freshly derived key. Never reuse a key/counter stream.
 
-## Rebuild the report (optional)
-
-```bash
-python -m pip install -r requirements-report.txt
-python build_report.py
-```
-
-The PDF uses Aptos with black text throughout. To rebuild it, download Aptos from
-Microsoft and set `APTOS_FONT_DIR` to the directory containing `Aptos.ttf` and
-`Aptos-Bold.ttf`. The fonts are embedded in the PDF, so they are not needed to read it.
-The font files themselves are not redistributed in the source package.
-
-This rebuilds `report.pdf` from `report.md`; it does not rewrite the analysis to
-match a different evidence run. Tables in the report document the archived run.
-When creating another submission archive, omit `demo_state`, `.venv`, recovered files,
-and any newly generated private keys or passwords. Keep a private local working
-environment for the assessor's demonstration.
 # ICS344-assignment-1
